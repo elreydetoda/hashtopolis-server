@@ -4,6 +4,8 @@ services:
     container_name: php-apache
     build: .
     restart: always
+    volumes:
+      - ./src/import/:/var/www/html/import/:ro
     depends_on:
       - db
     ports:
