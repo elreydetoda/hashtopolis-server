@@ -28,3 +28,4 @@ services:
       - FOWNER
       - CAP_SETGID
       - CAP_SETUID
+      - CHOWN
