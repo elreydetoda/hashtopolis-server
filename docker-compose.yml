@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  php-apache-environment:
+  hashtopolis:
     container_name: php-apache
     build: .
     restart: always
@@ -8,12 +8,21 @@ services:
       - db
     ports:
       - 8080:80
+    cap_drop:
+      - ALL
   db:
     container_name: db
     image: mysql:5.7
     restart: always
+    volumes:
+      - hash_db:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: $ROOT_PASS
       MYSQL_DATABASE: $HASH_DB
       MYSQL_USER: $HASH_USER
       MYSQL_PASSWORD: $HASH_PASS
+    cap_drop:
+      - ALL
+
+volumes:
+  hash_db:
