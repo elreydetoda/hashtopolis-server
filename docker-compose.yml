@@ -15,7 +15,7 @@ services:
     image: mysql:5.7
     restart: always
     volumes:
-      - hash_db:/var/lib/mysql
+      - ./db:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: $ROOT_PASS
       MYSQL_DATABASE: $HASH_DB
@@ -26,6 +26,3 @@ services:
     cap_add:
       - DAC_OVERRIDE
       - FOWNER
-
-volumes:
-  hash_db:
