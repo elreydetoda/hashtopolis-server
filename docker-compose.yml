@@ -26,3 +26,5 @@ services:
     cap_add:
       - DAC_OVERRIDE
       - FOWNER
+      - CAP_SETGID
+      - CAP_SETUID
