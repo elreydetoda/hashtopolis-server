@@ -23,6 +23,9 @@ services:
       MYSQL_PASSWORD: $HASH_PASS
     cap_drop:
       - ALL
+    cap_add:
+      - DAC_OVERRIDE
+      - FOWNER
 
 volumes:
   hash_db:
