@@ -5,5 +5,5 @@ ENTRYPOINT [ "docker-entrypoint.sh" ]
 
 COPY docker-entrypoint.sh /usr/local/bin/
 
-RUN set -ex && docker-php-ext-install pdo pdo_mysql
+RUN set -ex && docker-php-ext-install pdo_mysql
 COPY --chown=www-data:www-data ./src/ /var/www/html/
