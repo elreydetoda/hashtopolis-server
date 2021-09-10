@@ -4,7 +4,11 @@
 set -${-//[sc]/}eu${DEBUG:+xv}o pipefail
 
 function main(){
-  chown -R www-data:www-data /var/www/html/
+  if chown -R www-data:www-data /var/www/html/ ; then
+    echo "All files were chown'ed properly"
+  else
+    echo "There were some errors while chown'ing files"
+  fi
   docker-php-entrypoint apache2-foreground
 }
 
