@@ -34,3 +34,4 @@ services:
       - CAP_SETGID
       - CAP_SETUID
       - CHOWN
+      - CAP_DAC_READ_SEARCH
