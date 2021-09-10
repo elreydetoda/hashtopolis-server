@@ -11,3 +11,4 @@ src/files/*
 *.sln
 *.phpproj.user
 /db/
+.env
