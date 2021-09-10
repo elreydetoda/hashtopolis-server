@@ -1,12 +1,14 @@
 version: '3.8'
 services:
   hashtopolis:
-    container_name: php-apache
+    container_name: hashtopolis
     build: .
     restart: always
     volumes:
+      ##
       # !!! CAREFUL, importing from here will delete whatever file is in this folder !!!
       - ./src/import/:/var/www/html/import/
+      ##
       - ./src/files/:/var/www/html/files/
       - ./data/conf.php:/var/www/html/inc/conf.php
     depends_on:
