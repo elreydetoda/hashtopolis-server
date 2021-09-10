@@ -18,7 +18,9 @@ services:
     cap_drop:
       - ALL
     cap_add:
+      # used to change files since non-priv user
       - CHOWN
+      # used for the gosu binary
       - CAP_SETGID
       - CAP_SETUID
   db:
@@ -35,7 +37,10 @@ services:
     cap_drop:
       - ALL
     cap_add:
+      # used to change files since non-priv user
+      - CHOWN
+      # used because container uses find command
+      - CAP_DAC_READ_SEARCH
+      # used for the gosu binary
       - CAP_SETGID
       - CAP_SETUID
-      - CHOWN
-      - CAP_DAC_READ_SEARCH
