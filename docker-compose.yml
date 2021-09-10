@@ -6,7 +6,7 @@ services:
     restart: always
     volumes:
       - ./src/import/:/var/www/html/import/:ro
-      - ./data/config.php:/var/www/html/inc/config.php
+      - ./data/config.php:/var/www/html/inc/conf.php
     depends_on:
       - db
     ports:
