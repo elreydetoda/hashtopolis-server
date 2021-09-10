@@ -7,10 +7,10 @@ services:
     volumes:
       ##
       # !!! CAREFUL, importing from here will delete whatever file is in this folder !!!
-      - ./src/import/:/var/www/html/import/
+      - ./src/import/:/var/www/html/import/:Z
       ##
-      - ./src/files/:/var/www/html/files/
-      - ./data/conf.php:/var/www/html/inc/conf.php
+      - ./src/files/:/var/www/html/files/:Z
+      - ./data/conf.php:/var/www/html/inc/conf.php:Z
     depends_on:
       - db
     ports:
@@ -28,7 +28,7 @@ services:
     image: mysql:5.7
     restart: always
     volumes:
-      - ./db:/var/lib/mysql
+      - ./db:/var/lib/mysql:Z
     environment:
       MYSQL_ROOT_PASSWORD: $ROOT_PASS
       MYSQL_DATABASE: $HASH_DB
