@@ -5,10 +5,7 @@ services:
     build: .
     restart: always
     volumes:
-      ##
-      # !!! CAREFUL, importing from here will delete whatever file is in this folder !!!
       - ./src/import/:/var/www/html/import/:Z
-      ##
       - ./src/files/:/var/www/html/files/:Z
       - ./data/conf.php:/var/www/html/inc/conf.php:Z
     depends_on:
@@ -20,7 +17,7 @@ services:
     cap_add:
       # used to change files since non-priv user
       - CHOWN
-      # used for the gosu binary
+      # used by apache to drop privs
       - CAP_SETGID
       - CAP_SETUID
   db:
