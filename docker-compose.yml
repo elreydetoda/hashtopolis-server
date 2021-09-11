@@ -27,10 +27,10 @@ services:
     volumes:
       - ./data/db:/var/lib/mysql:Z
     environment:
-      MYSQL_ROOT_PASSWORD: $ROOT_PASS
-      MYSQL_DATABASE: $HASH_DB
-      MYSQL_USER: $HASH_USER
-      MYSQL_PASSWORD: $HASH_PASS
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASS
+      MYSQL_DATABASE: $MYSQL_DB
+      MYSQL_USER: $MYSQL_USER
+      MYSQL_PASSWORD: $MYSQL_PASS
     cap_drop:
       - ALL
     cap_add:
