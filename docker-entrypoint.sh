@@ -9,7 +9,7 @@ function main(){
   else
     echo "There were some errors while chown'ing files"
   fi
-  docker-php-entrypoint apache2-foreground
+  gosu www-data docker-php-entrypoint apache2-foreground
 }
 
 # https://elrey.casa/bash/scripting/main
